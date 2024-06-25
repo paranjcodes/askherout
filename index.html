@@ -2,6 +2,14 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./styles.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'YOUR_TRACKING_ID');
+</script>
+
         
     </head> 
     <body>
@@ -19,6 +27,12 @@
                 <script>
                     function nextPage() {
                         window.location.href = "yes.html";
+                        document.getElementById('yesButton').addEventListener('click', function() {
+                        gtag('event', 'click', {
+                          'event_category': 'Button',
+                          'event_label': 'Yes Button'
+                        });
+                      });
                     }
                     
                     function moveButton() {
